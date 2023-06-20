@@ -1,6 +1,7 @@
 # Tanzu Application Platform release notes
 
-This topic contains release notes for Tanzu Application Platform v1.4.
+This topic describes the changes in Tanzu Application Platform (commonly known as TAP)
+v{{ vars.url_version }}.
 
 ## <a id='1-4-6'></a> v1.4.6
 
@@ -10,9 +11,36 @@ This topic contains release notes for Tanzu Application Platform v1.4.
 
 This release has the following security fixes, listed by component and area.
 
-#### <a id='1-4-6-COMPONENT-NAME-fixes'></a> COMPONENT-NAME
-
-- Security fix description.
+<table>
+<tr>
+<th>Package Name</th>
+<th>Vulnerabilities Resolved</th>
+</tr>
+<tr>
+<td>api-portal.tanzu.vmware.com</td>
+<td><ul><li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-41881">CVE-2022-41881</a></li></ul></td>
+</tr>
+<tr>
+<td>buildservice.tanzu.vmware.com</td>
+<td><ul>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-1281">CVE-2023-1281</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-1829">CVE-2023-1829</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-0386">CVE-2023-0386</a></li>
+</ul></td>
+</tr>
+<tr>
+<td>cert-manager.tanzu.vmware.com</td>
+<td><ul><li>GHSA-vvpx-j8f3-3w6h</li></ul></td>
+</tr>
+<tr>
+<td>sso.apps.tanzu.vmware.com</td>
+<td><ul><li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-31484">CVE-2023-31484</a></li></ul></td>
+</tr>
+<tr>
+<td>tap-gui.tanzu.vmware.com</td>
+<td><ul><li>GHSA-f9xv-q969-pqx4</li></ul></td>
+</tr>
+</table>
 
 ---
 
@@ -20,19 +48,26 @@ This release has the following security fixes, listed by component and area.
 
 The following issues, listed by component and area, are resolved in this release.
 
-#### <a id='1-4-6-COMPONENT-NAME-ri'></a> COMPONENT-NAME
+#### <a id='1-4-6-intellij-ext-ri'></a> Tanzu Developer Tools for IntelliJ
 
-- Resolved issue description.
+- Resolved permission-denied errors encountered during Live Update when operating against platforms
+  configured to use the Jammy build stack.
+
+#### <a id='1-4-6-vs-ext-ri'></a> Tanzu Developer Tools for Visual Studio
+
+- Resolved permission-denied errors encountered during Live Update when operating against platforms
+  configured to use the Jammy build stack.
+
+#### <a id='1-4-6-vscode-ext-ri'></a> Tanzu Developer Tools for VS Code
+
+- Resolved permission-denied errors encountered during Live Update when operating against platforms
+  configured to use the Jammy build stack.
 
 ---
 
 ### <a id='1-4-6-known-issues'></a> Known issues
 
-This release has the following known issues, listed by component and area.
-
-#### <a id='1-4-6-COMPONENT-NAME-ki'></a> COMPONENT-NAME
-
-- Known issue description with link to workaround.
+This release introduces no new known issues.
 
 ---
 
