@@ -1,6 +1,6 @@
 # Namespace Provisioner Reference Guide
 
-This topic describes known limitations and default resource mapping.
+This topic tells you about the known limitations and default resource mapping.
 
 ## <a id="known-limitations"></a>Known Limitations
 

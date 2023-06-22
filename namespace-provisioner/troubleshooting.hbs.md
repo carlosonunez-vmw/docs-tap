@@ -1,7 +1,9 @@
 # Troubleshoot Namespace Provisioner
 
-This topic provides information to help troubleshoot Namespace Provisioner.
-## <a id="controller-logs"></a>Controller logs
+This topic tells you how to troubleshoot Namespace Provisioner in Tanzu Application Platform
+(commonly known as TAP).
+
+## View controller logs
 
 To get the logs when using the [controller](about.hbs.md#nsp-controller) to manage the [desired-namespaces ConfigMap](about.hbs.md#desired-ns-configmap)
 
