@@ -3,6 +3,9 @@
 By default, Tanzu Application Platform installs and uses a self-signed CA for issuing TLS
 certificates to components for the purpose of securing ingress communication.
 
+Ingress communication uses TLS by default. Platform operators can control certificates and how they
+are used by components.
+
 The ingress issuer is a self-signed `cert-manager.io/v1/ClusterIssuer` and is provided by Tanzu
 Application Platform's [cert-manager package](../cert-manager/about.hbs.md). Its default name is
 `tap-ingress-selfsigned`.
