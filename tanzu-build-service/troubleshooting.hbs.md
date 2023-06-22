@@ -1,6 +1,6 @@
 # Troubleshooting Tanzu Build Service
 
-This topic tells you how to troubleshoot Tanzu Build Service when used with
+This topic provides information to help troubleshoot Tanzu Build Service when used with
 Tanzu Application Platform.
 
 ## <a id="eks-1-23-volume"></a> Builds fail due to volume errors on EKS running Kubernetes v1.23

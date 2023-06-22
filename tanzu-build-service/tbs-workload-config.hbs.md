@@ -1,8 +1,6 @@
 # Configuring Tanzu Build Service properties on a workload
 
-This topic tells you how to configure your workload with Tanzu Build Service properties.
-
-## Overview
+This topic describes how to configure your workload with Tanzu Build Service properties.
 
 Tanzu Build Service builds registry images from source code for Tanzu Application Platform.
 You can configure these build configurations by using a workload.
