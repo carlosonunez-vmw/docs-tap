@@ -11,29 +11,52 @@ v{{ vars.url_version }}.
 
 This release has the following security fixes, listed by component and area.
 
-#### <a id='1-5-3-COMPONENT-NAME-fixes'></a> COMPONENT-NAME
-
-- Security fix description.
-
----
-
-### <a id='1-5-3-resolved-issues'></a> Resolved issues
-
-The following issues, listed by component and area, are resolved in this release.
-
-#### <a id='1-5-3-COMPONENT-NAME-ri'></a> COMPONENT-NAME
-
-- Resolved issue description.
+<table>
+<tr>
+<th>Package Name</th>
+<th>Vulnerabilities Resolved</th>
+</tr>
+<tr>
+<td>apis.apps.tanzu.vmware.com</td>
+<td><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-3996">CVE-2022-3996</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-1255">CVE-2023-1255</a></li>
+</ul></td>
+</tr>
+<tr>
+<td>sso.apps.tanzu.vmware.com</td>
+<td><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-3996">CVE-2022-3996</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-0464">CVE-2023-0464</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-0465">CVE-2023-0465</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-0466">CVE-2023-0466</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-1255">CVE-2023-1255</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-2650">CVE-2023-2650</a></li>
+<li>GHSA-f3fp-gc8g-vw66</li>
+<li>GHSA-g2j6-57v7-gm8c</li>
+<li>GHSA-m8cg-xc2p-r3fc</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-3821">CVE-2022-3821</a></li>
+</ul></td>
+</tr>
+<tr>
+<td>buildservice.tanzu.vmware.com</td>
+<td><ul><li>GHSA-hw7c-3rfg-p46j</li></ul></td>
+</tr>
+<tr>
+<td>learningcenter.tanzu.vmware.com</td>
+<td><ul><li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-2004">CVE-2023-2004</a></li></ul></td>
+</tr>
+<tr>
+<td>workshops.learningcenter.tanzu.vmware.com</td>
+<td><ul><li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-2004">CVE-2023-2004</a></li></ul></td>
+</tr>
+</table>
 
 ---
 
 ### <a id='1-5-3-known-issues'></a> Known issues
 
-This release has the following known issues, listed by component and area.
-
-#### <a id='1-5-3-COMPONENT-NAME-ki'></a> COMPONENT-NAME
-
-- Known issue description with link to workaround.  
+This release introduces no new known issues.
 
 ---
 
@@ -546,7 +569,7 @@ For more information, see [Configure properties](./scst-scan/install-scst-scan.h
 
 #### <a id="tap-gui-plug-in-features"></a> Tanzu Application Platform GUI plug-ins
 
-- **Supply Chain Plug-in:**
+- **Application Live View plug-in:**
   - When `alvToken` has expired, the logic to fetch a new token and the API call are both retried.
   - Actions are deactivated and a message is displayed when sensitive operations are deactivated for
     the app.
@@ -561,7 +584,7 @@ For more information, see [Configure properties](./scst-scan/install-scst-scan.h
   - The fetch token for the `logLevelsPanelToggle` component is now loaded from the workload plug-in
     PodLogs page.
 
-- **Security Analysis GUI Plug-in:**
+- **Security Analysis GUI plug-in:**
   - **CVE Details:** Added Impacted Workloads widget to the CVE Details page.
   - **CVE Details:** Display and navigate to latest source SHA or image digest in the Workload Builds
     table.
@@ -733,12 +756,12 @@ HTTPProxy resources.
 
 #### <a id="1-5-0-tap-gui-plug-in-ri"></a>Tanzu Application Platform GUI plug-ins
 
-- **App Accelerator Plug-in:**
+- **Application Accelerator plug-in:**
 
   - Fixed JSON schema for Git repository creation.
   - Added missing query string parameters to accelerator provenance.
 
-- **Supply Chain Plug-in:**
+- **Application Live View plug-in:**
 
   - Fixed CPU stats in App Live View Steeltoe Threads and Memory pages.
   - The App Live View Details page now shows the correct boot version instead of **UNKNOWN**.

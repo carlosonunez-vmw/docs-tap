@@ -47,9 +47,9 @@ Some of these `Providers` install hundreds of additional CRDs into the cluster.
 This is particularly true of the `Providers` for AWS, Azure, and GCP.
 For the number of CRDs installed with these `Providers`, see:
 
-- [provider-aws CRDs](https://marketplace.upbound.io/providers/upbound/provider-aws/latest/crds)
-- [provider-azure CRDs](https://marketplace.upbound.io/providers/upbound/provider-azure/latest/crds)
-- [provider-gcp CRDs](https://marketplace.upbound.io/providers/upbound/provider-gcp/latest/crds)
+- [provider-aws CRDs](https://marketplace.upbound.io/providers/upbound/provider-aws/latest/managed-resources)
+- [provider-azure CRDs](https://marketplace.upbound.io/providers/upbound/provider-azure/latest/managed-resources)
+- [provider-gcp CRDs](https://marketplace.upbound.io/providers/upbound/provider-gcp/latest/managed-resources)
 
 You must ensure that your cluster has sufficient resource to support this number of additional CRDs
 if you choose to install them.
@@ -89,3 +89,101 @@ Error: exit status 1
 Explicitly create a ClusterRoleBinding for your user or group to the corresponding
 `app-operator-claim-class-SERVICE` ClusterRole, where `SERVICE` is one of `mysql`, `postgresql`,
 `rabbitmq`, or `redis`.
+
+## <a id="cp-custom-cert"></a>Crossplane Providers do not transition to HEALTHY=True if using a custom certificate for your registry
+
+**Description:**
+
+A known issue occurs when you install and configure Crossplane Providers while using a custom certificate
+for your registry.
+The issue prevents the class claims used for dynamic provisioning from reconciling.
+A common symptom of this issue is that class claims indefinitely report a status condition of
+`ResourceMatched=False` with `Reason=ResourceNotReady`.
+
+You can confirm the current status of the Crossplane Providers by running:
+
+```console
+kubectl get providers
+```
+
+Example output:
+
+```console
+NAME                  INSTALLED   HEALTHY   PACKAGE                                                                                                                             AGE
+provider-helm                               registry.example.com/tap/tap-packages:provider-helm@sha256:a3a14b07b79a8983257d1a2cc0449a4806753868178055554cfa38de7b649467         3d5h
+provider-kubernetes                         registry.example.com/tap/tap-packages:provider-kubernetes@sha256:8039f7e56376b46532e3ce0eb7fc4a4501f2d85decf4912bb5952083abb41b7b   3d5h
+```
+
+In this example, the Providers are not reporting `INSTALLED=True` or `HEALTHY=True`.
+Therefore, they might be affected by this issue.
+
+This issue occurs because the Providers are installed by Crossplane itself rather than directly by the
+Tanzu Application Platform [Crossplane Package](../../crossplane/about.hbs.md).
+CA certificate data configured through the `tap-values.yaml` file is not passed down to Crossplane,
+and therefore it is unable to pull the Provider images.
+
+**Workaround:**
+
+Create a `ConfigMap` with the PEM encoded certificate data for your CA certificate, and then set
+`crossplane.registryCaBundleConfig` to refer to the `ConfigMap` in `tap-values.yaml`.
+
+> **Note** From Tanzu Application Platform v1.6, the Crossplane Package inherits the data configured
+> in `shared.ca_cert_data` of `tap-values.yaml` and this workaround will no longer be needed.
+
+## <a id="cp-custom-cert-inject"></a>Crossplane Providers cannot communicate with systems using a custom CA
+
+**Description:**
+
+A known issue occurs when a Crossplane Provider needs to communicate with systems that are set up
+with a custom CA.
+For example, when the Crossplane Helm Provider uses `releases.helm.crossplane.io` to try to pull a
+Helm chart from a registry that uses a custom CA, you see that:
+
+- The `releases.helm.crossplane.io` never reports the status condition `Ready=True`.
+- The `releases.helm.crossplane.io` shows a certificate verification error for either:
+  - The status condition of type `SYNCED`.
+  - The event on the `release.helm.crossplane.io`.
+
+To confirm whether you are affected by this issue:
+
+- Verify the status by running:
+
+    ```console
+    kubectl get releases.helm.crossplane.io
+    ```
+
+    Example output if you are affected by the issue:
+
+    ```console
+    NAME                CHART   VERSION   SYNCED   READY   STATE   REVISION   DESCRIPTION   AGE
+    wordpress-example           15.2.5    False    False                                    7m37s
+    ```
+
+- Find out more about the reason by running the following command, or similar:
+
+    ```console
+    kubectl get event --namespace default --field-selector involvedObject.name=wordpress-example,involvedObject.kind=Release,type!=Normal | grep -e 'LAST SEEN' -e 'failed to login'
+    ```
+
+    Example output if you are affected by the issue:
+
+    ```console
+    LAST SEEN   TYPE      REASON                            OBJECT                      MESSAGE
+    3m41s       Warning   CannotCreateExternalResource      release/wordpress-example   failed to install release: failed to login to registry: Get "https://insecure-registry:443/v2/": tls: failed to verify certificate: x509: certificate signed by unknown authority
+    ```
+
+This issue occurs because the Providers are installed by Crossplane itself rather than directly by the
+Tanzu Application Platform [Crossplane Package](../../crossplane/about.hbs.md).
+CA certificate data configured through the `tap-values.yaml` file is not passed down to Crossplane
+Providers. Therefore, the Providers are unable to connect to the systems they need to communicate with,
+such as, the Helm Provider connecting to a registry hosting the Helm charts or the Kubernetes Provider
+connecting to a Kubernetes APIServer. This issue might be resolved in a later release.
+
+**Workaround:**
+
+Use admission control that allows you to mutate objects, in this case pods, and injects the appropriate
+CA certificates.
+You can use any system that can mutate objects at admission to mutate the Crossplane Provider pods.
+For example, to inject CA certificates you can use this sample in the [Kyverno documentation].
+
+[CaInjectExample]: https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/

@@ -1,8 +1,6 @@
-# Spring Boot conventions
+# Overview of Spring Boot conventions
 
 This topic tells you about the Spring Boot convention server.
-
-## <a id="overview"></a>Overview
 
 The Spring Boot convention server is a bundle of small conventions applied to any Spring Boot
 application that is submitted to the supply chain in which the convention controller is configured.
