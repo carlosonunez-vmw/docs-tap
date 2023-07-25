@@ -3,37 +3,30 @@
 This topic describes the changes in Tanzu Application Platform (commonly known as TAP)
 v{{ vars.url_version }}.
 
-## <a id='1-3-10'></a> v1.3.10 
- 
+## <a id='1-3-10'></a> v1.3.10
+
 **Release Date**: 11 July 2023
- 
-### <a id='1-3-10-security-fixes'></a> Security fixes 
- 
-This release has the following security fixes, listed by component and area. 
- 
-#### <a id='1-3-10-COMPONENT-NAME-fixes'></a> COMPONENT-NAME
- 
-- Security fix description.
- 
+
+### <a id='1-3-10-security-fixes'></a> Security fixes
+
+This release has the following security fixes, listed by component and area.
+
+<table>
+<tr>
+<th>Package Name</th>
+<th>Vulnerabilities Resolved</th>
+</tr>
+<tr>
+<td>metadata-store.apps.tanzu.vmware.com</td>
+<td><ul><li> GHSA-vvpx-j8f3-3w6h</li><li>GHSA-fxg5-wq6x-vr4w </li></ul></td>
+</tr>
+</table>
+
 ---
- 
-### <a id='1-3-10-resolved-issues'></a> Resolved issues 
- 
-The following issues, listed by component and area, are resolved in this release. 
- 
-#### <a id='1-3-10-COMPONENT-NAME-ri'></a> COMPONENT-NAME
- 
-- Resolved issue description.
- 
----
- 
-### <a id='1-3-10-known-issues'></a> Known issues 
- 
-This release has the following known issues, listed by component and area. 
- 
-#### <a id='1-3-10-COMPONENT-NAME-ki'></a> COMPONENT-NAME
- 
-- Known issue description with link to workaround.  
+
+### <a id='1-3-10-known-issues'></a> Known issues
+
+This release introduces no new known issues.
 
 ---
 
@@ -1175,8 +1168,8 @@ VMware recommends you migrate builds to Jammy stacks in advance.
 For how to migrate builds, see [Use Jammy stacks for a workload](tanzu-build-service/dependencies.md#using-jammy).
 - The Cloud Native Buildpack Bill of Materials (CNB BOM) format is deprecated.
 It is still activated by default in Tanzu Application Platform v1.3 and v1.4.
-VMware plans to deactivate this format by default in Tanzu Application Platform v1.5
-and remove support in Tanzu Application Platform v1.6.
+VMware plans to deactivate this format by default in Tanzu Application Platform v1.6
+and remove support in Tanzu Application Platform v1.7.
 To manually deactivate legacy CNB BOM support, see [Deactivate the CNB BOM format](tanzu-build-service/install-tbs.md#deactivate-cnb-bom).
 
 ##### <a id="1-3-apps-plugin-deprecations"></a> Tanzu CLI Apps plug-in

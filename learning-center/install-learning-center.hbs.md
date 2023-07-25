@@ -7,7 +7,8 @@ This topic describes how to install Learning Center from the Tanzu Application P
 
 To install Tanzu Learning Center, see the following sections.
 
-For general information about Learning Center, see [Learning Center](about.md). For information about deploying Learning Center operator, see [Install and configure the Learning Center operator](getting-started/learning-center-operator.hbs.md).
+For general information about Learning Center, see [Learning Center](about.md).
+For information about deploying Learning Center operator, see [Install and configure the Learning Center operator](getting-started/learning-center-operator.hbs.md).
 
 ## <a id='prereqs'></a>Prerequisites
 
@@ -15,7 +16,8 @@ Before installing Learning Center:
 
 - Complete all prerequisites to install Tanzu Application Platform. For more information, see [Prerequisites](../prerequisites.md).
 
-- The cluster must have an ingress router configured. If you have installed the Tanzu Application Platform package through the full profile or light profile, it already deploys a contour ingress controller.
+- The cluster must have an ingress router configured. If you have installed Learning Center through
+a profile, it already deploys a Contour ingress controller.
 
 - The operator, when deploying instances of the workshop environments, must be able to expose them through an external URL for access. For the custom domain you are using, DNS must have been configured with a wildcard domain to forward all requests for sub-domains of the custom domain to the ingress router of the Kubernetes cluster.
 
