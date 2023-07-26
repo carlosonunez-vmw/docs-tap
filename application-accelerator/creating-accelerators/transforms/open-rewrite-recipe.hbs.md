@@ -11,7 +11,7 @@ Java files using the grammar for Java 11.
 
 ## <a id="syntax-ref"></a>Syntax reference
 
-```
+```console
 type: OpenRewriteRecipe
 recipe: <string>                  # Full qualified classname of the recipe
 options:
@@ -28,7 +28,7 @@ of `#companyPkg`. This is more powerful than using [RewritePath](rewrite-path.md
 and [ReplaceText](replace-text.md), as it reads the syntax of files and
 correctly deals with imports, fully vs. non-fully qualified names, and so on.
 
-```
+```console
 chain:
   - include: ["**/*.java"]
   - type: OpenRewriteRecipe

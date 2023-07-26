@@ -6,7 +6,7 @@ The `RewritePath` transform allows you to change the name and path of files with
 
 ## <a id="syntax-ref"></a>Syntax reference
 
-```
+```console
 type: RewritePath
 regex: <string>
 rewriteTo: <SpEL expression>
@@ -34,7 +34,7 @@ If the regex doesn't match, the behavior depends on the `matchOrFail` property:
 The default value for `regex` is the following regular expression,
 which provides convenient access to some named capturing groups:
 
-```
+```console
 ^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)
 ```
 
@@ -52,7 +52,7 @@ which doesn't rewrite paths.
 
 The following moves all files from `src/main/java` to `sub-module/src/main/java`:
 
-```
+```console
 type: RewritePath
 regex: src/main/java/(.*)
 rewriteTo: "'sub-module/src/main/java' + #g1"   # 'sub-module/' + #g0 works too
@@ -61,7 +61,7 @@ rewriteTo: "'sub-module/src/main/java' + #g1"   # 'sub-module/' + #g0 works too
 The following flattens all files found inside the `sub-path` directory and its subdirectories,
 and puts them into the `flattened` folder:
 
-```
+```console
 type: RewritePath
 regex: sub-path/(.*/)*(?<filename>[^/]+)
 rewriteTo: "'flattened' + #filename"   # 'flattened' + #g2 would work too
@@ -69,7 +69,7 @@ rewriteTo: "'flattened' + #filename"   # 'flattened' + #g2 would work too
 
 The following turns all paths into lowercase:
 
-```
+```console
 type: RewritePath
 rewriteTo: "#g0.toLowerCase()" 
 ```
@@ -79,7 +79,7 @@ rewriteTo: "#g0.toLowerCase()"
 It's common to define pipelines that perform a `Chain` of transformations
 on a subset of files, typically selected by `Include/Exclude`:
 
-```
+```console
 - include: "**/*.java"
 - chain:
     - # do something here

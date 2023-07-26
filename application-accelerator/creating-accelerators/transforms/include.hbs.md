@@ -13,7 +13,7 @@ by [Combo](combo.md).
 
 ## <a id="syntax-ref"></a>Syntax reference
 
-```
+```console
 type: Include
 patterns: [<ant pattern>]
 condition: <SpEL expression>
@@ -21,7 +21,7 @@ condition: <SpEL expression>
 
 ## <a id="examples"></a>Examples
 
-```
+```console
 type: Chain
 transformations:
   - type: Include

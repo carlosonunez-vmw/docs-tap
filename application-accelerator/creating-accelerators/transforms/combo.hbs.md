@@ -62,7 +62,7 @@ When you configure the `Combo` transform with all properties, it behaves as foll
 
 To recap in pseudo code, a giant `Combo` behaves like this:
 
-```
+```console
 Let(symbols, in:
     Chain(
         include,
@@ -79,20 +79,20 @@ without having to write their `type: x` in full.
 
 For example, this:
 
-```
+```console
 include: ['**/*.txt']
 ```
 
 is a perfectly valid way to achieve the same effect as this:
 
-```
+```console
 type: Include
 patterns: ['**/*.txt']
 ```
 
 Similarly, this:
 
-```
+```console
 chain:
   - type: T1
     ...
@@ -102,7 +102,7 @@ chain:
 
 is often preferred over the more verbose:
 
-```
+```console
 type: Chain
 transformations:
   - type: T1
@@ -115,7 +115,7 @@ As with other transforms, the order of declaration of properties has no impact. 
 convention that mimics the actual behavior for clarity, but the following applies **T1** and **T2** on all `.yaml`
 files even though we VMware has placed the `include` section after the `merge` section.
 
-```
+```console
 merge:
   - type: T1
   - type: T2
@@ -133,7 +133,7 @@ The following are typical use cases for `Combo`.
 To apply separate transformations to separate sets of files. For example, to all `.yaml` files
 and to all `.xml` files:
 
-```
+```console
 merge:                   # This uses the Merge syntax in a first Combo.
   - include: ['*.yaml']      # This actually nests a second Combo inside the first.
     chain:
@@ -147,7 +147,7 @@ merge:                   # This uses the Merge syntax in a first Combo.
 
 To apply **T1** then **T2** on all `.yaml` files that are _not_ in any `secret` directory:
 
-```
+```console
 include: ['**/*.yaml']
 exclude: ['**/secret/**']
 chain:

@@ -26,7 +26,7 @@ input is determined entirely by two things only:
 
 YTT is invoked as an external process with the following command line:
 
-```
+```console
 ytt -f <input-folder> \
     --data-values-file <symbols.json> \
     --output-files <output-folder> \
