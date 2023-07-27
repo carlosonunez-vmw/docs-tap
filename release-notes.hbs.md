@@ -283,8 +283,6 @@ The Tanzu Service CLI plug-in v0.7.0 includes the following:
 - Install Tanzu CLI using a package manager. For more information, see [Install the Tanzu CLI](install-tanzu-cli.hbs.md#install-cli).
 - Install plug-ins from the new centralized plugin repository using plug-in groups. For more
 information, see [Install Tanzu CLI Plug-ins](install-tanzu-cli.hbs.md#install-plugins).
-- For internet-restricted environmedddddddddormation, see
-[VMware Tanzu CLI Documentation](https://docs.vmware.com/en/VMware-Tanzu-CLI/index.html).
 - For the comprehensive list of what's new in this release of Tanzu CLI, see the [VMware Tanzu CLI v0.90.x release notes](https://docs.vmware.com/en/VMware-Tanzu-CLI/0.90.0/tanzu-cli/release-notes.html).
 - If you have any issues, questions, or suggestions, you can submit feedback, feature requests, or
 bug reports in the open-source [Tanzu CLI project on GitHub](https://github.com/vmware-tanzu/tanzu-cli).
