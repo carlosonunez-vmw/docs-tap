@@ -5,6 +5,7 @@ docs.vmware.com is built.
 
 - [Tanzu Application Platform v{{ vars.url_version }}](overview.hbs.md)
 - [Release notes](release-notes.hbs.md)
+- [Release notes 2](release-notes2.hbs.md)
 - [Components and installation profiles](about-package-profiles.hbs.md)
 - [Installation](install-intro.hbs.md)
   - [Introduction](install-intro.hbs.md)
