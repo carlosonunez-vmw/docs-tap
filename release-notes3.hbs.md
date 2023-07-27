@@ -36,7 +36,7 @@ This release has the following security fixes, listed by component and area.
 | learningcenter.tanzu.vmware.com | <details><summary>Expand to see the list</summary><ul><li> CVE-2022-3996</li><li>CVE-2022-3821</li><li>CVE-2022-4415</li><li>CVE-2022-36033</li><li>GHSA-gp7f-rwcx-9369</li><li>CVE-2023-25690</li><li>CVE-2023-27522</li><li>CVE-2023-23914</li><li>CVE-2023-23915</li></ul></details>|
 
 
-### <a id='1-6-2-resolved-issues'></a> v1.6.2
+### <a id='1-6-2-resolved-issues'></a> v1.6.2 Resolved issues
 
 The following issues, listed by component and area, are resolved in this release.
 
@@ -72,7 +72,7 @@ The following issues, listed by component and area, are resolved in this release
 
 ---
 
-### <a id='1-6-2-known-issues'></a> v1.6.2
+### <a id='1-6-2-known-issues'></a> v1.6.2 Known issues
 
 This release has the following known issues, listed by component and area.
 
@@ -563,7 +563,7 @@ installed. For more information, see [Build Service CLI plug-in overview](cli-pl
 
 ---
 
-### <a id='1-6-1-breaking-changes'></a> v1.6.1
+### <a id='1-6-1-breaking-changes'></a> v1.6.1 Breaking changes
 
 This release includes the following changes, listed by component and area.
 
@@ -653,7 +653,7 @@ This release has the following security fixes, listed by component and area.
 | tap-gui.tanzu.vmware.com | <details><summary>Expand to see the list</summary><ul><li> GHSA-p5gc-c584-jj6v</li><li>GHSA-7hv8-3fr9-j2hv</li><li>GHSA-6w63-h3fj-q4vw</li><li>GHSA-jv3g-j58f-9mq9</li><li>GHSA-8cf7-32gw-wr33</li><li>GHSA-hjrf-2m68-5959</li><li>GHSA-qwph-4952-7xr6</li><li>GHSA-x77j-w7wf-fjmw </li></ul></details>|
 
 
-### <a id='1-6-1-resolved-issues'></a> v1.6.1
+### <a id='1-6-1-resolved-issues'></a> v1.6.1 Resolved issues
 
 The following issues, listed by component and area, are resolved in this release.
 
@@ -742,7 +742,7 @@ the workload update.
 
 ---
 
-### <a id='1-6-1-known-issues'></a> v1.6.1
+### <a id='1-6-1-known-issues'></a> v1.6.1 Known issues
 
 This release has the following known issues, listed by component and area.
 
@@ -774,7 +774,7 @@ This release has the following known issues, listed by component and area.
   To workaround, delete the `validatingwebhookconfiguration` manually by running
   `kubectl delete validatingwebhookconfiguration crossplane`.
 
-#### <a id='1-6-1-stk-ki'></a> v1.6.1 known issues: Services Toolkit 
+#### <a id='1-6-1-stk-ki'></a> v1.6.1 known issues: Services Toolkit
 
 - Unexpected error if `additionalProperties` is `true` in a CompositeResourceDefinition.
   For more information and a workaround, see [Troubleshoot Services Toolkit](./services-toolkit/how-to-guides/troubleshooting.hbs.md#compositeresourcedef).
