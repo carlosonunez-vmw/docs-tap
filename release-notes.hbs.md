@@ -140,12 +140,18 @@ This release has the following security fixes, listed by component and area.
 
 ### <a id='1-5-4-known-issues'></a> Known issues
 
-This release has the following known issues, listed by component and area. 
+This release has the following known issues, listed by component and area.
 
-#### <a id='1-5-4-tap-ki'></a> TAP
+#### <a id='1-5-4-tap-ki'></a> Tanzu Application Platform
 
-- While upgrading from TAP 1.4 to TAP 1.5 sometimes results in temporary failures that self heal in a few minutes. This is because we switched to versioned secrets for all components in 1.5 which results in a race condition during upgrades and errors that would look like this:
-  - `Reconcile failed: Preparing template values: secrets "tekton-pipelines-values" not found`
+- Upgrading from Tanzu Application Platform v1.4 to v1.5 sometimes causes temporary failures that
+  self heal in a few minutes. This is because Tanzu Application Platform switched to versioned secrets
+  for all components in v1.5, which can cause a race condition during upgrades and errors similar to
+  the following:
+
+      ```console
+      Reconcile failed: Preparing template values: secrets "tekton-pipelines-values" not found
+      ```
 
 ---
 
