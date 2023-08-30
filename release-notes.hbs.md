@@ -89,9 +89,8 @@ This release has the following known issues, listed by component and area.
   `buildservice.tanzunet_secret.name` in the `tap-values.yaml` file.
   For a workaround, use plaintext secrets by using the fields `buildservice.tanzunet_username` and
   `buildservice.tanzunet_password` in the `tap-values.yaml` file.
-- Tanzu Application Platform installation temporarily fails with this error: `waiting on reconcile packageinstall/buildservice. Overlaying data values (in following order: ca-cert.yaml, cert-injection-webhook/upstream/imagevalues.yaml, cert-injection-webhook/values.yaml, additional data values)` related to the key `deactivate_smart_warmer`. This issue will resolve after a few minutes.
-
-
+- Tanzu Application Platform installation temporarily fails with this error: `waiting on reconcile packageinstall/buildservice. Overlaying data values (in following order: ca-cert.yaml, cert-injection-webhook/upstream/imagevalues.yaml, cert-injection-webhook/values.yaml, additional data values)` related to the key `deactivate_smart_warmer`.
+This issue will resolve after a few minutes.
 
 ---
 
