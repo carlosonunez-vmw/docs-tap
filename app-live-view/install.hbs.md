@@ -3,43 +3,53 @@
 This topic tells you how to install Application Live View from the Tanzu Application Platform
 (commonly known as TAP) package repository.
 
-Application Live View installs four packages for `view`, `run`, and `build`
-profiles:
+Application Live View installs four packages. For more information about these packages, see
+[Component overview](./architecture.hbs.md#component-overview).
 
-<!-- Where are the four packages and why can't I see iterate and full in the list below? -->
+The Application Live View packages are included in the following profiles:
 
-- For the `view` profile, Application Live View installs Application Live View back end package
-  (`backend.appliveview.tanzu.vmware.com`). This installs the Application Live View back end
-  component with Tanzu Developer Portal in `app-live-view` namespace.
-
-- For the `run` profile, Application Live View installs Application Live View
-  APIServer package (`apiserver.appliveview.tanzu.vmware.com`) in
-  `appliveview-tokens-system` namespace, and it installs Application Live View
-  connector package (`connector.appliveview.tanzu.vmware.com`) as DaemonSet in
-  `app-live-view-connector` namespace.
-
-- For the `build` profile, Application Live View installs Application Live View
-  conventions package (`conventions.appliveview.tanzu.vmware.com`). This
-  installs the Application Live View convention service in
-  `app-live-view-conventions` namespace.
-
-- For the `iterate` profile, Application Live View installs Application Live
-  View connector package, Application Live View APIServer package, and
-  Application Live View conventions package.
-
-- For the `full` profile, Application Live View installs the Application Live
-  View back end package, Application Live View connector package, Application
-  Live View APIServer package, and Application Live View conventions package.
-
-The Application Live View back end (`backend.appliveview.tanzu.vmware.com`)
-provides a REST API that fetches the actuator data for the applications.
-The Application Live View UI plug-in as part of Tanzu Developer Portal
-queries this back-end REST API to get live actuator information for the pod.
-
-The Application Live View connector (`connector.appliveview.tanzu.vmware.com`) retrieves the actuator
-data from all the connected applications and returns it to the Application Live View back end.
-The actuator data is then displayed in the Application Live View UI plug-in as
-part of Tanzu Developer Portal.
+<table>
+  <tr>
+    <th>Profile</th>
+    <th>Packages installed</th>
+  </tr>
+  <tr>
+    <td>View</td>
+    <td>Application Live View back end. This installs the Application Live View back end component
+    with Tanzu Developer Portal in <code>app-live-view</code> namespace.</td>
+  </tr>
+  <tr>
+    <td>Run</td>
+    <td>
+      <ul>
+        <li>Application Live View APIServer in the <code>appliveview-tokens-system</code> namespace</li>
+        <li>Application Live View connector as DaemonSet in the <code>app-live-view-connector</code> namespace</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Build</td>
+    <td>Application Live View conventions. This installs the Application Live View convention service
+    in the <code>app-live-view-conventions</code> namespace.</td>
+  </tr>
+  <tr>
+    <td>Iterate</td>
+    <td><ul>
+      <li>Application Live View connector</li>
+      <li>Application Live View conventions</li>
+      <li>Application Live View APIServer</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Full</td>
+    <td><ul>
+      <li>Application Live View back end</li>
+      <li>Application Live View connector</li>
+      <li>Application Live View conventions</li>
+      <li>Application Live View APIServer</li>
+    </ul></td>
+  </tr>
+</table>
 
 >**Note** Follow the steps in this topic if you do not want to use a profile to
 >install Application Live View. For more information about profiles, see [About
