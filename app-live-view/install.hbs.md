@@ -15,8 +15,8 @@ The Application Live View packages are included in the following profiles:
   </tr>
   <tr>
     <td>View</td>
-    <td>Application Live View back end. This installs the Application Live View back end component
-    with Tanzu Developer Portal in <code>app-live-view</code> namespace.</td>
+    <td><ul><li>pplication Live View back end. This installs the Application Live View back end component
+    with Tanzu Developer Portal in <code>app-live-view</code> namespace.</li></ul></td>
   </tr>
   <tr>
     <td>Run</td>
@@ -29,8 +29,8 @@ The Application Live View packages are included in the following profiles:
   </tr>
   <tr>
     <td>Build</td>
-    <td>Application Live View conventions. This installs the Application Live View convention service
-    in the <code>app-live-view-conventions</code> namespace.</td>
+    <td><ul><li>Application Live View conventions. This installs the Application Live View convention service
+    in the <code>app-live-view-conventions</code> namespace.</li></ul></td>
   </tr>
   <tr>
     <td>Iterate</td>
