@@ -15,7 +15,7 @@ The Application Live View packages are included in the following profiles:
   </tr>
   <tr>
     <td>View</td>
-    <td><ul><li>pplication Live View back end. This installs the Application Live View back end component
+    <td><ul><li>Application Live View back end. This installs the Application Live View back end component
     with Tanzu Developer Portal in <code>app-live-view</code> namespace.</li></ul></td>
   </tr>
   <tr>
@@ -35,18 +35,21 @@ The Application Live View packages are included in the following profiles:
   <tr>
     <td>Iterate</td>
     <td><ul>
-      <li>Application Live View connector</li>
-      <li>Application Live View conventions</li>
-      <li>Application Live View APIServer</li>
+      <li>Application Live View connector as DaemonSet in the <code>app-live-view-connector</code> namespace</li>
+      <li>Application Live View conventions. This installs the Application Live View convention service
+    in the <code>app-live-view-conventions</code> namespace.</li>
+      <li>Application Live View APIServer in the <code>appliveview-tokens-system</code> namespace</li>
     </ul></td>
   </tr>
   <tr>
     <td>Full</td>
     <td><ul>
-      <li>Application Live View back end</li>
-      <li>Application Live View connector</li>
-      <li>Application Live View conventions</li>
-      <li>Application Live View APIServer</li>
+      <li>Application Live View back end. This installs the Application Live View back end component
+    with Tanzu Developer Portal in <code>app-live-view</code> namespace.</li>
+      <li>Application Live View connector as DaemonSet in the <code>app-live-view-connector</code> namespace</li>
+      <li>Application Live View conventions. This installs the Application Live View convention service
+    in the <code>app-live-view-conventions</code> namespace.</li>
+      <li>Application Live View APIServer in the <code>appliveview-tokens-system</code> namespace</li>
     </ul></td>
   </tr>
 </table>
