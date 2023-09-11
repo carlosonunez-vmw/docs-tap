@@ -44,16 +44,16 @@ To override the default settings and customize the probes at a cluster level:
         kubernetes_distribution                                          string   Kubernetes distribution that this package is being installed on. Accepted
                                                                                    values: ['''',''openshift'']
         kubernetes_version                                               string   Optional: The Kubernetes Version. Valid values are '1.24.*', or ''
-        livenessProbe.terminationGracePeriodSeconds                      number   configure a grace period for the kubelet to wait  between triggering a shut down
+        livelinessProbe.terminationGracePeriodSeconds                    number   configure a grace period for the kubelet to wait  between triggering a shut down
                                                                                    of the failed container, and then forcing the container runtime to stop that
                                                                                    container
-        livenessProbe.timeoutSeconds                 1                   number   Number of seconds after which the probe times out
-        livenessProbe.failureThreshold                                   number   After a probe fails failureThreshold times in a row, Kubernetes considers that
+        livelinessProbe.timeoutSeconds                 1                 number   Number of seconds after which the probe times out
+        livelinessProbe.failureThreshold                                 number   After a probe fails failureThreshold times in a row, Kubernetes considers that
                                                                                    the overall check has failed
-        livenessProbe.initialDelaySeconds            0                   number   Number of seconds after the container has started before liveness probes are
+        livelinessProbe.initialDelaySeconds            0                 number   Number of seconds after the container has started before liveness probes are
                                                                                    initiated
-        livenessProbe.periodSeconds                  10                  number   How often (in seconds) to perform the probe
-        livenessProbe.successThreshold               1                   number   Minimum consecutive successes for the probe to be considered successful after
+        livelinessProbe.periodSeconds                  10                number   How often (in seconds) to perform the probe
+        livelinessProbe.successThreshold               1                 number   Minimum consecutive successes for the probe to be considered successful after
                                                                                    having failed
         readinessProbe.initialDelaySeconds             0                 number   Number of seconds after the container has started before readiness probes are
                                                                                    initiated
@@ -88,7 +88,7 @@ To override the default settings and customize the probes at a cluster level:
     ```yaml
     springboot_conventions:
       autoConfigureActuators: true
-      livenessProbe:
+      livelinessProbe:
         initialDelaySeconds: 11
         periodSeconds: 12
         timeoutSeconds: 13
